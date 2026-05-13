@@ -1,6 +1,6 @@
 package State;
 
-public class Etatnormal implements Etat{
+public class EtatBonus implements Etat{
 
 	@Override
 	public String getNomEtat() {
