@@ -75,13 +75,16 @@ public class GameFacade {
         sg.ajouterEnnemi(fabrique.creerEnnemi("squelette", diff));
         sg.ajouterEnnemi(fabrique.creerEnnemi("squelette", diff));
         cr.ajouterEnnemi(fabrique.creerEnnemi("squelette", diff));
+        cr.ajouterEnnemi(fabrique.creerEnnemi("momie", diff));
         na.ajouterEnnemi(fabrique.creerEnnemi("araignee", diff));
         na.ajouterEnnemi(fabrique.creerEnnemi("araignee", diff));
         cav.ajouterEnnemi(fabrique.creerEnnemi("troll", diff));
         bib.ajouterEnnemi(fabrique.creerEnnemi("garde_elite", diff));
+        bib.ajouterEnnemi(fabrique.creerEnnemi("momie", diff));
         boss.ajouterEnnemi(fabrique.creerEnnemi("boss", diff));
 
         // Peuplement objets
+        e.ajouterObjet(fabrique.creerObjet("epee_bois"));
         e.ajouterObjet(fabrique.creerObjet("torche"));
         e.ajouterObjet(fabrique.creerObjet("potion_soin"));
         cn.ajouterObjet(fabrique.creerObjet("epee"));
@@ -196,11 +199,11 @@ public class GameFacade {
         } else {
             if (!p.getObjets().isEmpty()) {
                 System.out.println(" Objets trouvés :");
-                p.getObjets().forEach(o -> System.out.println("    • " + o.getNom() + " – " + o.getDescription()));
+                p.getObjets().forEach(o -> System.out.println(" -> " + o.getNom() + " – " + o.getDescription()));
             }
             if (!p.getSecrets().isEmpty()) {
                 System.out.println(" Passage secret découvert !");
-                p.getSecrets().forEach(s -> System.out.println("    → " + s));
+                p.getSecrets().forEach(s -> System.out.println(" -> " + s));
             }
         }
     }
@@ -292,8 +295,8 @@ public class GameFacade {
     	System.out.println();
         System.out.println(" -----FÉLICITATIONS, AVENTURIER----- ");
         System.out.println(" Vous avez vaincu le Seigneur des Ténèbres et réussi à vous échapper du donjon ! ");
-        System.out.printf(" Tours joués : %-31s║%n", etat.getTourActuel());
-        System.out.printf(" Ennemis vaincus : %-30s║%n", etat.getCombat().getNbrEnnemi());
+        System.out.printf(" Tours joués : %-31s%n", etat.getTourActuel());
+        System.out.printf(" Ennemis vaincus : %-30s%n", etat.getCombat().getNbrEnnemi());
     }
 
     private void afficherGameOver() {

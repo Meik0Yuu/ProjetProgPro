@@ -13,6 +13,7 @@ import strategy.DeplacementImmobile;
 public class GameFactoryImp implements GameFactory{
 	public Objet creerObjet(String type) {
         return switch (type.toLowerCase()) {
+        	case "epee_bois" -> new Objet("Épée en bois", Objet.TypeObjet.ARME, 1, "+4 dégâts", "Une petite épée de bois que vous avez gardé de vos jeunes années", 2);
             case "epee" -> new Objet("Épée rouillée", Objet.TypeObjet.ARME, 2, "+8 dégâts", "Une vieille épée ébréchée mais encore efficace.", 8);
             case "epee_maudite"  -> new Objet("Épée maudite", Objet.TypeObjet.ARME, 3, "+18 dégâts", "Forgée dans l'ombre, elle pulse d'énergie sombre.", 18);
             case "arc" -> new Objet("Arc elfique", Objet.TypeObjet.ARME, 2, "+12 dégâts", "Léger et précis, taillé dans le bois de lune.", 12);
@@ -50,6 +51,11 @@ public class GameFactoryImp implements GameFactory{
                 "Squelette guerrier", "Mort-vivant", "Des os animés par une magie obscure.",
                 "*cliquetis d'os*",
                 (int)(35*m), (int)(6*m), (int)(6*m), 3,
+                new AttaqueNormale(), new DeplacementImmobile());
+            case "momie" -> new Ennemi(
+                "Momie guerrière", "Mort-vivant", "Une momie en putréfaction recouverte de bandages éfilochés.",
+                "*grognement guttural*",
+                (int)(30*m), (int)(5*m), (int)(5*m), 3,
                 new AttaqueNormale(), new DeplacementImmobile());
             case "troll" -> new Ennemi(
                 "Troll des cavernes", "Troll", "Massif, puant, redoutablement fort.",

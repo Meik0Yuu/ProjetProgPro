@@ -46,13 +46,11 @@ public class Inventaire {
             System.out.println("(inventaire vide)");
             return;
         }
-        System.out.printf(" %-3s %-20s %-10s %s%n", "N°", "Nom", "Type", "Utilité");
-        System.out.println("  " + "─".repeat(55));
+        System.out.printf(" %-3s %-20s %-10s %s%n", "Num", "Nom", "Type", "Utilité");
         for (int i = 0; i < objets.size(); i++) {
             System.out.printf(" [%d] %s%n", i + 1, objets.get(i));
         }
-        System.out.println("  " + "─".repeat(55));
-        System.out.println(" Slots : " + objets.size() + "/" + CAPACITE_MAX);
+        System.out.println("\n Slots : " + objets.size() + "/" + CAPACITE_MAX);
     }
 
     public List<Objet> getObjets(){ 

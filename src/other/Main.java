@@ -14,7 +14,7 @@ public class Main {
         System.out.println(" -----DONJON DES OMBRES----- ");
         System.out.println(" Jeu d'aventure textuel ");
 
-        System.out.print("\n  Entrez votre nom d'aventurier : ");
+        System.out.print("\n Entrez votre nom d'aventurier : ");
         String nom = sc.nextLine().trim();
         if (nom.isBlank()) nom = "Héros";
 
