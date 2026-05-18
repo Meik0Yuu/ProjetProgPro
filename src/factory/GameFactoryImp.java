@@ -38,43 +38,43 @@ public class GameFactoryImp implements GameFactory{
         double m = diff.getModificateurEnnemis();
         return switch (type.toLowerCase()) {
             case "gobelin" -> new Ennemi(
-                "Gobelin", "Gobelin", "Un petit être vert malodorant.",
-                "Grrr ! Intrus dans mon donjon !",
+                "Gobelin", "Gobelin", "Petit monstre laid et plein de malice.",
+                "Grrrk... Hihihi... HI HI HI !",
                 (int)(25*m), (int)(4*m), (int)(4*m), 1,
                 new AttaqueNormale(), new DeplacementAleatoire());
             case "gobelin_archer" -> new Ennemi(
-                "Gobelin archer", "Gobelin", "Un gobelin avec un arc de fortune.",
+                "Gobelin archer", "Gobelin", "Gobelin plus intelligent doué de parole, armé d'un arc et de flèches.",
                 "Je vais te transpercer !",
                 (int)(20*m), (int)(6*m), (int)(3*m), 1,
                 new AttaqueNormale(), new DeplacementAleatoire());
             case "squelette" -> new Ennemi(
-                "Squelette guerrier", "Mort-vivant", "Des os animés par une magie obscure.",
-                "*cliquetis d'os*",
+                "Squelette guerrier", "Mort-vivant", "Mort-vivant revenu à la vie par magie noire, armé et animé d'une volonté de combattre.",
+                "Clac... clac.. CLAC CLAC CLAC !",
                 (int)(35*m), (int)(6*m), (int)(6*m), 3,
                 new AttaqueNormale(), new DeplacementImmobile());
             case "momie" -> new Ennemi(
-                "Momie guerrière", "Mort-vivant", "Une momie en putréfaction recouverte de bandages éfilochés.",
-                "*grognement guttural*",
+                "Momie guerrière", "Mort-vivant", "Mort-vivant de type égyptienne, ancien combattant embaumé et maudit, ressuscité par magie noire pour assouvir une vengeance.",
+                "Uuuuuuuhhh... krrrhhh... UUUHHH !",
                 (int)(30*m), (int)(5*m), (int)(5*m), 3,
                 new AttaqueNormale(), new DeplacementImmobile());
             case "troll" -> new Ennemi(
-                "Troll des cavernes", "Troll", "Massif, puant, redoutablement fort.",
-                "RAAAH ! Moi ÉCRASER !",
+                "Troll des cavernes", "Troll", "Une massive créature brutale et primitive tapie dans les profondeurs de la terre, dotée d'une force colossale et d'une peau épaisse comme de la roche.",
+                "GROOAAH... ROUMF... GRAAAAH !",
                 (int)(60*m), (int)(9*m), (int)(12*m), 4,
                 new AttaqueFurieuse(), new DeplacementAleatoire());
             case "araignee" -> new Ennemi(
-                "Araignée géante", "Bête", "Ses crocs suintent de venin.",
-                "*sifflement*",
+                "Araignée géante", "Bête", "Créature cauchemardesque aux proportions monstrueuses, tisseuse de toiles mortelles, paralyse ses proies avec un venin foudroyant.",
+                "Tssssssss... tsssssss... TSSSKRIIII !",
                 (int)(30*m), (int)(5*m), (int)(4*m), 2,
                 new AttaquePoison(), new DeplacementAleatoire());
             case "garde_elite" -> new Ennemi(
-                "Garde d'élite", "Humain", "Un soldat corrompu par les ténèbres.",
-                "Tu ne passeras pas !",
+                "Garde d'élite", "Humain", "Guerrier humain redoutable corrompu par la magie noire.",
+                "Halt ! ...EN GARDE !",
                 (int)(70*m), (int)(10*m), (int)(10*m), 6,
                 new AttaqueFurieuse(), new DeplacementImmobile());
             case "boss" -> new Ennemi(
-                "Seigneur des Ténèbres", "Boss", "La source de toute l'obscurité du donjon.",
-                "Tu oses me défier ?! Ta vie prend fin ici, aventurier !",
+                "Seigneur des Ténèbres", "Boss", "Etre maléfique d'une puissance absolue, maître de la magie noire dont la seule présence répand la terreur et corruption autour de lui. C'est la source de toute l'obscurité du donjon.",
+                "...Toi vulgaire humain.. TU OSE ME DEFIER !?? TA VIE PREND FIN ICI !",
                 (int)(150*m), (int)(15*m), (int)(20*m), 8,
                 new AttaqueFurieuse(), new DeplacementImmobile());
             default -> throw new IllegalArgumentException("Ennemi inconnu : " + type);
@@ -85,34 +85,34 @@ public class GameFactoryImp implements GameFactory{
     public Piece creerPiece(String type) {
         return switch (type.toLowerCase()) {
             case "entree" -> new Piece("Entrée du donjon",
-                "Une grande porte en bois pourri grince derrière vous. La torche que vous portez vacille.",
+                "Une massive porte en vieux chêne noirci et couverte de griffures profondes laissées par d'innombrables créatures. Vous sentez un souffle glacé venu des profondeurs du donjon venir vers vous, votre lampe vacille !",
                 "gobelin", "torche", null, false);
             case "couloir_nord" -> new Piece("Couloir nord",
-                "Un couloir humide et froid. Des traces de sang sèchent sur les murs de pierre.",
+                "Un couloir étroit, glacial, les murs de pierre couverts de traînées de sang séché.",
                 "gobelin_archer", "epee", null, false);
             case "salle_garde" -> new Piece("Salle des gardes",
-                "Des armures vides ornent les murs. Une odeur de métal rouillé flotte dans l'air.",
+                "Des armures vides ornent les murs de pierre. Une odeur de métal rouillé flotte dans l'air.",
                 "squelette", "armure_cuir", "eliminer_gardes", false);
             case "crypte" -> new Piece("Crypte oubliée",
-                "Des sarcophages brisés jonchent le sol. Quelque chose bouge dans l'ombre.",
+                "Des sarcophages éventrés gisent sur le sol, leurs couvercles de pierre fracassés. Dans l'obscurité du fond, une silhouette se déplace lentement.",
                 "squelette", "parchemin", null, false);
             case "caverne" -> new Piece("Caverne des trolls",
-                "Des stalactites immenses pendent du plafond. Un grondement sourd résonne.",
+                "Des stalactites immenses pendent du plafond dans l'obscurité. Un grondement sourd résonne.",
                 "troll", "hache", "vaincre_troll", false);
             case "nid_araignees" -> new Piece("Nid d'araignées",
-                "Des toiles épaisses recouvrent tout. Des cocons suspendus pendent des parois.",
+                "Un couloir entièrement tapissé de toiles épaisses et collantes, des cocons blanchâtres suspendus au plafond contenant des formes immobiles.",
                 "araignee", "antidote", null, false);
             case "bibliotheque" -> new Piece("Bibliothèque maudite",
-                "Des grimoires brûlés s'entassent sur des étagères brisées. Un PNJ fouille les ruines.",
+                "Des grimoires brûlés s'entassent sur des étagères brisées. Un personnage fouille fébrilement les ruines, retournant les livres calcinés un à un dans le silence.",
                 null, "arc", null, false);
             case "armurerie" -> new Piece("Armurerie secrète",
-                "Un passage dérobé mène ici. Des armes de grande qualité sont encore utilisables.",
+                "Un passage dérobé mène à cette salle oubliée. Des armes de grande qualité reposent sur des râteliers intacts, comme si le temps ne les avait pas touchées.",
                 null, "epee_maudite", null, false);
             case "salle_boss" -> new Piece("Trône des Ténèbres",
-                "Une immense salle baignée de lumière rouge. Sur le trône siège le Seigneur des Ombres.",
+                "Une immense salle baignée d'une lumière rouge sang. Au fond, sur un trône de pierre noire, le Seigneur des Ombres attend, immobile, comme s'il savait que vous veniez.",
                 "boss", null, "vaincre_boss", false);
             case "sortie" -> new Piece("Pont-levis – Sortie",
-                "La lumière du jour filtre à travers la herse rouillée. La liberté est à portée de main !",
+                "La lumière du jour filtre à travers la herse rouillée, projetant de longs rayons dorés sur le sol de pierre. La liberté est à portée de main.",
                 null, null, null, true);
             default -> throw new IllegalArgumentException("Pièce inconnue : " + type);
         };

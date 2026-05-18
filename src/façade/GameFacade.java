@@ -102,23 +102,23 @@ public class GameFacade {
 
         // PNJs
         PNJ sage = new PNJ("Sage Aldric", "Sage",
-            "Un vieux mage aux habits déchirés se cache dans les ruines.",
-            "Aventurier ! Le Seigneur des Ténèbres réside au nord de la bibliothèque.",
-            "La clé dorée est avec le garde d'élite… ou du moins c'est ce qu'on dit.",
-            "Méfie-toi du nid d'araignées à l'est. Le venin est traître !");
+            "Un vieillard aux habits déchirés et couverts de suie, tapi dans les ruines. Ses yeux vifs trahissent une intelligence encore bien aiguisée malgré les années.",
+            "Aventurier ! Le Seigneur des Ténèbres... il réside au nord de la bibliothèque.",
+            "La clé dorée... le garde d'élite la possède. Du moins c'est ce qu'on murmure.",
+            "L'Est est maudit. Le nid d'araignées... leur venin est traître, je te préviens !");
         sage.setObjetCadeau(fabrique.creerObjet("cle_or"));
         bib.ajouterPNJ(sage);
 
         PNJ marchande = new PNJ("Marchande Éléa", "Marchande",
-            "Une femme robuste s'est réfugiée dans un recoin de la caverne.",
-            "Psst ! Je vends ce que j'ai pu sauver des pilleurs...",
-            "Le troll de la caverne protège un passage secret vers l'armurerie.",
+            "Une femme robuste et déterminée, réfugiée dans un recoin sombre de la caverne. Ses affaires sont disposées à la hâte sur un vieux tissu élimé.",
+            "Psst ! J'ai pu sauver des pilleurs... tu es intéressé ?",
+            "Le troll de la caverne... il protège un passage secret vers l'armurerie. Méfie-toi.",
             "Bonne chance, aventurier. Tu en auras besoin.");
         cav.ajouterPNJ(marchande);
 
         // Secrets
-        arm.ajouterSecret("Un panneau mural coulissant révèle un coffre caché avec une potion bonus !");
-        cr.ajouterSecret("Derrière un sarcophage, vous trouvez une inscription : 'La lumière vainc l'ombre'.");
+        arm.ajouterSecret("Un panneau mural coulissant révèle une alcôve dissimulée. À l'intérieur, un vieux coffre poussiéreux contient une potion aux reflets dorés, intacte !");
+        cr.ajouterSecret("Derrière un sarcophage déplacé, une inscription gravée profondément dans la pierre : 'La lumière vainc l'ombre.' Les lettres semblent briller faiblement dans le noir.");
 
         this.entree = e;
     }
@@ -247,7 +247,7 @@ public class GameFacade {
         List<Ennemi> ennemis = p.getEnnemis().stream()
             .filter(Ennemi::estVivant).collect(java.util.stream.Collectors.toList());
         if (ennemis.isEmpty()) {
-            System.out.println(" Aucun ennemi dans cette pièce.");
+            System.out.println("Aucun ennemi dans cette pièce.");
             return;
         }
         new SystemeDeCombat(etat, sc).menerCombat(ennemis, p);
@@ -336,9 +336,9 @@ public class GameFacade {
     private void afficherBanniere() {
         System.out.println();
         System.out.println(" -----DONJON DES OMBRES----- ");
-        System.out.println(" Un seigneur obscur a corrompu ces terres.");
-        System.out.println(" Explorez, combattez, survivez...");
-        System.out.println(" Et surtout : venez à bout du boss pour pouvoir vous échapper !");
+        System.out.println(" Un seigneur obscur a étendu sa corruption sur ces terres oubliées. Les ombres sont vivantes. Les murs ont une mémoire.");
+        System.out.println(" Explorez. Combattez. Survivez. Et surtout... ne fuyez pas avant d'avoir mis fin à son règne.");
+        System.out.println(" Bonne chnace. Vous en aurez besoin.");
     }
 
     public boolean isEnCours() { 

@@ -78,7 +78,7 @@ public class Gestionnaire {
         }
         if (suivante.isEstSortie() && !conditionVictoire.peutSortir()) {
             System.out.println(" La sortie est verrouillée par une force obscure.");
-            System.out.println(" Vous devez vaincre le Seigneur des Ombres avant de pouvoir fuir !");
+            System.out.println(" Vous devez vaincre le Seigneur des Ombres avant de pouvoir sortir !");
             return false;
         }
         pieceCourante = suivante;
