@@ -78,13 +78,13 @@ public class Main {
                     else jeu.parlerPNJ(arg);
                 }
 
-                case "statut","st" -> jeu.afficherStatut();
-                case "quetes","q" -> jeu.afficherQuetes();
-                case "aide","help","h" -> jeu.afficherActionsDisponibles();
+                case "statut", "st" -> jeu.afficherStatut();
+                case "quetes", "qt" -> jeu.afficherQuetes();
+                case "aide" -> jeu.afficherActionsDisponibles();
 
-                case "sauvegarder","save" -> jeu.sauvegarder();
+                case "sauvegarder", "save" -> jeu.sauvegarder();
 
-                case "quitter","quit","exit" -> {
+                case "quitter" -> {
                     System.out.println(" À bientôt, aventurier !");
                     return;
                 }

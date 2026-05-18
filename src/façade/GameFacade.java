@@ -330,6 +330,7 @@ public class GameFacade {
         System.out.println(" [utiliser <objet>] -> Utiliser un objet (inventaire)");
         System.out.println(" [sauvegarder] -> Sauvegarder la partie");
         System.out.println(" [aide] -> Afficher cette aide");
+        System.out.println(" [quitter] -> Quitter la partie");
     }
 
     private void afficherBanniere() {
@@ -337,7 +338,7 @@ public class GameFacade {
         System.out.println(" -----DONJON DES OMBRES----- ");
         System.out.println(" Un seigneur obscur a corrompu ces terres.");
         System.out.println(" Explorez, combattez, survivez...");
-        System.out.println(" Et surtout : venez à bout du boss avant de fuir !");
+        System.out.println(" Et surtout : venez à bout du boss pour pouvoir vous échapper !");
     }
 
     public boolean isEnCours() { 
