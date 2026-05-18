@@ -88,6 +88,8 @@ public class Main {
                     System.out.println(" À bientôt, aventurier !");
                     return;
                 }
+                
+                case "charger", "load" -> jeu.charger();
 
                 default -> System.out.println(" Commande inconnue. Tapez [aide] pour la liste.");
             }

@@ -3,7 +3,11 @@ package model;
 public class Combat {
 	private int nbrEnnemi = 0;
 	
-    public boolean executerTour(Joueur joueur, Ennemi ennemi) {
+    public void setNbrEnnemi(int nbrEnnemi) {
+		this.nbrEnnemi = nbrEnnemi;
+	}
+
+	public boolean executerTour(Joueur joueur, Ennemi ennemi) {
         int degats = joueur.calculerDegats();
         System.out.printf(" %s attaque %s pour %d dégâts.%n",
             joueur.getNom(), ennemi.getNom(), degats);

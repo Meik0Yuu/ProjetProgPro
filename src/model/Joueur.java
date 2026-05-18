@@ -10,6 +10,33 @@ import state.Etat;
 import state.Etatnormal;
 
 public class Joueur extends Personnage implements SujetObserver{
+	public List<Observer> getObservateurs() {
+		return observateurs;
+	}
+
+	public void setPv(int pv) {
+		this.pv = pv;
+	}
+
+	public void setPvMax(int pvMax) {
+		this.pvMax = pvMax;
+	}
+
+	public void setForce(int force) {
+		this.force = force;
+	}
+
+	public void setDefense(int defense) {
+		this.defense = defense;
+	}
+
+	public void setCapaciteAttaque(int capaciteAttaque) {
+		this.capaciteAttaque = capaciteAttaque;
+	}
+
+	public void setEtatCourant(Etat etatCourant) {
+		this.etatCourant = etatCourant;
+	}
 	private int pv;
     private int pvMax;
     private int force;
