@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -185,7 +186,7 @@ public class Gestionnaire {
         System.out.println(" Partie chargée !");
     }
     
-    private Piece trouverPieceParNom(String nom) {
+    public Piece trouverPieceParNom(String nom) {
         Set<Piece> visitees = new HashSet<>();
         Queue<Piece> file = new LinkedList<>();
         file.add(pieceCourante); // point de départ
@@ -236,4 +237,16 @@ public class Gestionnaire {
     public ConditionDeVictoire getConditionVictoire(){ 
     	return conditionVictoire; 
     }
+	public List<Piece> toutesLesPieces() {
+		Set<Piece> visitees = new LinkedHashSet<>();
+	    Queue<Piece> file = new LinkedList<>();
+	    file.add(pieceCourante);
+	    while (!file.isEmpty()) {
+	        Piece p = file.poll();
+	        if (visitees.contains(p)) continue;
+	        visitees.add(p);
+	        p.getSorties().values().forEach(file::add);
+	    }
+	    return new ArrayList<>(visitees);
+	}
 }
