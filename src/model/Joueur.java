@@ -84,7 +84,7 @@ public class Joueur extends Personnage implements SujetObserver{
     }
 
     public void afficherStats() {
-        System.out.printf(" %-34s%n" + getNom() + " [" + etatCourant.getNomEtat() + "]");
+        System.out.printf(" %-34s%n", getNom(), " [" + etatCourant.getNomEtat() + "]");
         System.out.printf(" PV %-27s%n", pvBarre());
         System.out.printf(" Force %-27s%n", force);
         System.out.printf(" Défense %-27s%n", defense);

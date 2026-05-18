@@ -90,7 +90,7 @@ public class SystemeDeCombat {
 
     private void afficherDebutCombat(List<Ennemi> ennemis) {
         System.out.println();
-        System.out.printf(" COMBAT !  %d ennemi(s) en vue !%-15s║%n",
+        System.out.printf(" COMBAT !  %d ennemi(s) en vue !%-15s%n",
             ennemis.size(), "");
         for (int i = 0; i < ennemis.size(); i++) {
             Ennemi e = ennemis.get(i);

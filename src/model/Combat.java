@@ -13,7 +13,7 @@ public class Combat {
 
         if (!ennemi.estVivant()) {
             nbrEnnemi++;
-            System.out.println(ennemi.getNom() + " est vaincu !");
+            System.out.println(ennemi.getNom() + " est vaincu ! Vous pouvez continuer d'avancer");
             return true;
         }
 

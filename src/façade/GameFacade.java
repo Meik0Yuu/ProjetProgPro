@@ -99,6 +99,7 @@ public class GameFacade {
         arm.ajouterObjet(fabrique.creerObjet("epee_maudite"));
         arm.ajouterObjet(fabrique.creerObjet("bouclier"));
         cav.ajouterObjet(fabrique.creerObjet("hache"));
+        boss.ajouterObjet(fabrique.creerObjet("licorne_bois"));
 
         // PNJs
         PNJ sage = new PNJ("Sage Aldric", "Sage",
