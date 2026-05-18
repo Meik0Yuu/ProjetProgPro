@@ -8,7 +8,7 @@ import model.action.Ramasser;
 import model.action.Utiliser;
 
 public class Objet {
-	public enum TypeObjet { ARME, POTION, CLE, ARMURE, COMBINABLE, DIVERS }
+	public enum TypeObjet { ARME, POTION, CLE, ARMURE, COMBINABLE, DIVERS, MYTHIQUE }
 
     private String nom;
     private TypeObjet typeObjet;

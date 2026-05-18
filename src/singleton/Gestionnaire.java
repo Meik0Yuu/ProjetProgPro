@@ -6,7 +6,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+import java.util.Set;
 
 import model.ConditionDeVictoire;
 import model.Ennemi;
@@ -153,6 +157,56 @@ public class Gestionnaire {
             System.err.println(" Impossible de charger : " + e.getMessage());
             return null;
         }
+    }
+    public void charger() {
+        String[] data = chargerDonnees();
+        if (data == null || data.length < 10) {
+            System.err.println(" Sauvegarde invalide ou incomplète.");
+            return;
+        }
+
+        // Restaurer le joueur
+        joueur.setNom(data[0]);
+        joueur.setPv(Integer.parseInt(data[1]));
+        joueur.setPvMax(Integer.parseInt(data[2]));
+        joueur.setForce(Integer.parseInt(data[3]));
+        joueur.setDefense(Integer.parseInt(data[4]));
+        joueur.setCapaciteAttaque(Integer.parseInt(data[5]));
+
+        // Restaurer la pièce courante
+        String nomPiece = data[6];
+        pieceCourante = trouverPieceParNom(nomPiece); // voir ci-dessous
+
+        // Restaurer le reste
+        tourActuel = Integer.parseInt(data[7]);
+        combat.setNbrEnnemi(Integer.parseInt(data[8]));
+        conditionVictoire.setBossVaincu(Boolean.parseBoolean(data[9]));
+
+        System.out.println(" Partie chargée !");
+    }
+    
+    private Piece trouverPieceParNom(String nom) {
+        Set<Piece> visitees = new HashSet<>();
+        Queue<Piece> file = new LinkedList<>();
+        file.add(pieceCourante); // point de départ
+
+        while (!file.isEmpty()) {
+            Piece p = file.poll();
+            if (visitees.contains(p)) continue;
+            visitees.add(p);
+
+            if (p.getNom().equals(nom)) return p;
+
+            // Ajouter les voisins
+            for (Piece voisine : p.getSorties().values()) {
+                if (!visitees.contains(voisine)) {
+                    file.add(voisine);
+                }
+            }
+        }
+
+        System.err.println(" Pièce introuvable : " + nom);
+        return pieceCourante; // fallback
     }
 
     public Joueur getJoueur(){

@@ -99,6 +99,7 @@ public class GameFacade {
         arm.ajouterObjet(fabrique.creerObjet("epee_maudite"));
         arm.ajouterObjet(fabrique.creerObjet("bouclier"));
         cav.ajouterObjet(fabrique.creerObjet("hache"));
+        boss.ajouterObjet(fabrique.creerObjet("licorne_bois"));
 
         // PNJs
         PNJ sage = new PNJ("Sage Aldric", "Sage",
@@ -278,6 +279,10 @@ public class GameFacade {
     	etat.sauvegarder(); 
     }
     
+    public void charger() {
+    	etat.charger();
+    }
+    
     private void verifierVictoire() {
         Joueur j = etat.getJoueur();
         if (!j.estVivant()) {
@@ -329,6 +334,7 @@ public class GameFacade {
         System.out.println(" [examiner <objet>] -> Examiner un objet");
         System.out.println(" [utiliser <objet>] -> Utiliser un objet (inventaire)");
         System.out.println(" [sauvegarder] -> Sauvegarder la partie");
+        System.out.println(" [charger] -> Charger une partie");
         System.out.println(" [aide] -> Afficher cette aide");
         System.out.println(" [quitter] -> Quitter la partie");
     }

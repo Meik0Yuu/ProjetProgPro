@@ -4,7 +4,10 @@ import java.util.List;
 
 public class ConditionDeVictoire {
 	private boolean bossVaincu = false;
-    private boolean sortieAtteinte = false;
+    public void setBossVaincu(boolean bossVaincu) {
+		this.bossVaincu = bossVaincu;
+	}
+	private boolean sortieAtteinte = false;
 
     public void signalerBossVaincu() {
         bossVaincu = true;

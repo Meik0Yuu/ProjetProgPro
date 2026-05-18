@@ -29,6 +29,7 @@ public class GameFactoryImp implements GameFactory{
             case "torche" -> new Objet("Torche", Objet.TypeObjet.DIVERS, 1, "Éclaire", "Indispensable dans les couloirs sombres.", 0);
             case "herbe" -> new Objet("Herbe médicinale", Objet.TypeObjet.COMBINABLE, 1, "+10 PV cru","Des feuilles aux propriétés curatives.", 10);
             case "flacon_vide" -> new Objet("Flacon vide", Objet.TypeObjet.COMBINABLE, 1, "Contenant", "Un flacon en verre soufflé.", 0);
+            case "licorne_bois" -> new Objet("Une petite licorne en bois", Objet.TypeObjet.MYTHIQUE, 10, "Moyen de transport invoquable", "Une petite licorne en bois touuuuuuuuuuuuuuuuute mignonne (les programmeuses étaient fatiguées ce jour)", 0);
             default -> throw new IllegalArgumentException("Objet inconnu : " + type);
         };
     }
