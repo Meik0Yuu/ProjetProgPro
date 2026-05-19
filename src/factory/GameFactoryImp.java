@@ -26,7 +26,7 @@ public class GameFactoryImp implements GameFactory{
             case "armure_cuir" -> new Objet("Armure de cuir", Objet.TypeObjet.ARMURE, 3, "+5 défense", "Souple et résistante.", 5);
             case "bouclier" -> new Objet("Bouclier en bois", Objet.TypeObjet.ARMURE, 4, "+8 défense", "Renforcé de bandes de métal.", 8);
             case "parchemin" -> new Objet("Parchemin mystérieux", Objet.TypeObjet.DIVERS, 1, "Indice", "Des symboles anciens dansent sur le papier jauni.", 0);
-            case "torche" -> new Objet("Torche", Objet.TypeObjet.DIVERS, 1, "Éclaire", "Indispensable dans les couloirs sombres.", 0);
+            case "torche" -> new Objet("Torche", Objet.TypeObjet.DIVERS, 1, "En théorie devrait éclairer la pièce. En pratique... plus discutable...", "Indispensable dans les couloirs sombres.", 0);
             case "herbe" -> new Objet("Herbe médicinale", Objet.TypeObjet.COMBINABLE, 1, "+10 PV cru","Des feuilles aux propriétés curatives.", 10);
             case "flacon_vide" -> new Objet("Flacon vide", Objet.TypeObjet.COMBINABLE, 1, "Contenant", "Un flacon en verre soufflé.", 0);
             case "licorne_bois" -> new Objet("Une petite licorne en bois", Objet.TypeObjet.MYTHIQUE, 10, "Moyen de transport invoquable", "Une petite licorne en bois touuuuuuuuuuuuuuuuute mignonne (les programmeuses étaient fatiguées ce jour)", 0);
