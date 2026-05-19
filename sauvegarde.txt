@@ -1,10 +1,10 @@
-pipou
-50
+Mulan
+51
 80
 10
 5
 8
-Salle des gardes
-6
+Entrée du donjon
+8
 4
 false
