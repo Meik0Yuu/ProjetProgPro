@@ -84,6 +84,7 @@ public class GameFacade {
         boss.ajouterEnnemi(fabrique.creerEnnemi("boss", diff));
 
         // Peuplement objets
+        e.ajouterObjet(fabrique.creerObjet("licorne_bois"));
         e.ajouterObjet(fabrique.creerObjet("epee_bois"));
         e.ajouterObjet(fabrique.creerObjet("torche"));
         e.ajouterObjet(fabrique.creerObjet("potion_soin"));
@@ -240,7 +241,24 @@ public class GameFacade {
         if (found.isEmpty()) { System.out.println(" Pas de '" + nom + "' dans l'inventaire."); return; }
         Objet o = found.get();
         o.utiliser(etat.getJoueur());
-        if (o.getTypeObjet() == Objet.TypeObjet.POTION) inv.retirer(nom);
+        if (o.getTypeObjet() == Objet.TypeObjet.POTION) {
+        	inv.retirer(nom);
+        } else if (o.getTypeObjet() == Objet.TypeObjet.MYTHIQUE) {
+            System.out.println(" Où voulez-vous vous téléporter ?");
+            toutesLesPieces().forEach(p -> System.out.println(" - " + p.getNom()));
+            System.out.print(" > ");
+            String choix = new Scanner(System.in).nextLine();
+            Piece destination = trouverPieceParNom(choix);
+            etat.setPieceCourante(destination);
+            System.out.println(" Vous apparaissez dans : " + destination.getNom());
+        }
+    }
+    private Piece trouverPieceParNom(String nom) {
+        return etat.trouverPieceParNom(nom); 
+    }
+
+    private List<Piece> toutesLesPieces() {
+        return etat.toutesLesPieces(); 
     }
 
     public void lancerCombat(Scanner sc) {

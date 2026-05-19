@@ -21,6 +21,9 @@ public class Utiliser implements ActionObjet{
             case ARMURE -> {
                 System.out.println(" Vous enfilez " + o.getNom() + ". Défense renforcée.");
             }
+            case MYTHIQUE -> {
+            	System.out.println(" La licorne en bois scintille magiquement...");
+            }
             default -> System.out.println(" " + o.getNom() + " ne peut pas être utilisé directement.");
         }
     }
