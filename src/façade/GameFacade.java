@@ -241,7 +241,7 @@ public class GameFacade {
         if (found.isEmpty()) { System.out.println(" Pas de '" + nom + "' dans l'inventaire."); return; }
         Objet o = found.get();
         o.utiliser(etat.getJoueur());
-        if (o.getTypeObjet() == Objet.TypeObjet.POTION) {
+        if (o.getTypeObjet() == Objet.TypeObjet.POTION || o.getTypeObjet() == Objet.TypeObjet.ARMURE) {
         	inv.retirer(nom);
         } else if (o.getTypeObjet() == Objet.TypeObjet.MYTHIQUE) {
             System.out.println(" Où voulez-vous vous téléporter ?");
@@ -251,6 +251,7 @@ public class GameFacade {
             Piece destination = trouverPieceParNom(choix);
             etat.setPieceCourante(destination);
             System.out.println(" Vous apparaissez dans : " + destination.getNom());
+            inv.retirer(nom);
         }
     }
     private Piece trouverPieceParNom(String nom) {
