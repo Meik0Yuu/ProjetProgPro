@@ -363,7 +363,7 @@ public class GameFacade {
         System.out.println(" -----DONJON DES OMBRES----- ");
         System.out.println(" Un seigneur obscur a étendu sa corruption sur ces terres oubliées. Les ombres sont vivantes. Les murs ont une mémoire.");
         System.out.println(" Explorez. Combattez. Survivez. Et surtout... ne fuyez pas avant d'avoir mis fin à son règne.");
-        System.out.println(" Bonne chnace. Vous en aurez besoin.");
+        System.out.println(" Bonne chance. Vous en aurez besoin.");
     }
 
     public boolean isEnCours() { 
