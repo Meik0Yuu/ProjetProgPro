@@ -1,10 +1,10 @@
-Mulan
-51
-80
+Héros
+130
+130
 10
 5
 8
 Entrée du donjon
-8
-4
+0
+0
 false
