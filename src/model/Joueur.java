@@ -43,6 +43,7 @@ public class Joueur extends Personnage implements SujetObserver{
     private int defense;
     private int capaciteAttaque;
     private int bonusArme; 
+    private int bonusDef;
 
     private final Inventaire inventaire;
     private Etat etatCourant;
@@ -114,7 +115,7 @@ public class Joueur extends Personnage implements SujetObserver{
         System.out.printf(" %-34s%n", getNom(), " [" + etatCourant.getNomEtat() + "]");
         System.out.printf(" PV %-27s%n", pvBarre());
         System.out.printf(" Force %-27s%n", force);
-        System.out.printf(" Défense %-27s%n", defense);
+        System.out.printf(" Défense %-27s%n", defense + bonusDef + " (+" + bonusDef + " défense)");
         System.out.printf(" Attaque %-27s%n", capaciteAttaque + bonusArme + " (+" + bonusArme + " arme)");
     }
 
@@ -138,6 +139,9 @@ public class Joueur extends Personnage implements SujetObserver{
     }
     public void setBonusArme(int b){ 
     	this.bonusArme = b; 
+    }
+    public void setBonusDef(int b) {
+    	this.bonusDef = b;
     }
     public Inventaire getInventaire(){ 
     	return inventaire; 

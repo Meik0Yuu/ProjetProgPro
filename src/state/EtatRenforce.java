@@ -23,4 +23,8 @@ public class EtatRenforce implements Etat{
     public int modifierAttaque(Joueur j, int base){ 
     	return (int)(base * 1.6);
     }
+	@Override
+	public int modifierDefense(Joueur joueur, int base) {
+		return (int)(base*1.6);
+	}
 }

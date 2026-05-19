@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Mulan
 49
 80
@@ -7,4 +8,15 @@ Mulan
 Trône des Ténèbres
 12
 9
+=======
+Héros
+130
+130
+10
+5
+8
+Entrée du donjon
+0
+0
+>>>>>>> c010546c847291aa910cdd65470f6b512ad1fa71
 false

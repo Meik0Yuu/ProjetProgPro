@@ -19,7 +19,9 @@ public class Utiliser implements ActionObjet{
                 System.out.println(" Vous équipez " + o.getNom() + " (+"+o.getValeurCombat()+" attaque, 5 tours).");
             }
             case ARMURE -> {
-                System.out.println(" Vous enfilez " + o.getNom() + ". Défense renforcée.");
+                System.out.println(" Vous enfilez " + o.getNom() + ". Défense renforcée." + o.getValeurCombat());
+                j.setBonusDef(o.getValeurCombat());
+                j.changerEtat(new EtatRenforce(5));
             }
             case MYTHIQUE -> {
             	System.out.println(" La licorne en bois scintille magiquement...");

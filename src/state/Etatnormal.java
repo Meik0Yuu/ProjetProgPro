@@ -13,5 +13,10 @@ public class Etatnormal implements Etat{
     public int modifierAttaque(Joueur j, int base){ 
     	return base; 
     }
+	@Override
+	public int modifierDefense(Joueur joueur, int base) {
+		// TODO Auto-generated method stub
+		return base;
+	}
 
 }

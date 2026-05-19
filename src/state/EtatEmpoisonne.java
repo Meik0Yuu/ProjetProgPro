@@ -27,5 +27,10 @@ public class EtatEmpoisonne implements Etat{
     public int modifierAttaque(Joueur j, int base){ 
     	return (int)(base * 0.75); 
     }
+	@Override
+	public int modifierDefense(Joueur joueur, int base) {
+		// TODO Auto-generated method stub
+		return (int)(base * 0.75);
+	}
 
 }
